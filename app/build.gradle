@@ -16,18 +16,61 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
+    signingConfigs {
+        debug {
+            storeFile file("../cert/debug.keystore")
+            storePassword "marveldebug"
+            keyAlias "marveldebug"
+            keyPassword "marveldebug"
+        }
+
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            storeFile file("../cert/release.keystore")
+            storePassword "marvel"
+            keyAlias "marvel"
+            keyPassword "marvel"
         }
     }
+
+    buildTypes {
+        debug{
+            minifyEnabled false
+            //signingConfig signingConfigs.debug
+        }
+
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            //signingConfig signingConfigs.release
+        }
+    }
+
+    flavorDimensions "default"
+
+    productFlavors {
+        pre{
+            resValue "string", "app_name", "Marvel PRE"
+            applicationIdSuffix ".pre"
+        }
+
+        pro{
+            resValue "string", "app_name", "Marvel"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11
+    }
+
+    buildFeatures{
+        viewBinding true
+        dataBinding true
     }
 }
 
