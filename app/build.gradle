@@ -18,8 +18,10 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "MARVEL_API_URL", "\"https://developer.marvel.com/v1/public/\""
-        buildConfigField "String", "MARVEL_API_KEY", "\"6be6a25397a1c9476f2006fcd6fc1cc9\""
+        buildConfigField "String", "MARVEL_API_URL", "\"https://gateway.marvel.com/v1/public/\""
+        buildConfigField "String", "MARVEL_PUBLIC_API_KEY", "\"6be6a25397a1c9476f2006fcd6fc1cc9\""
+        buildConfigField "String", "MARVEL_PRIVATE_API_KEY", "\"cc5e74af2d4dd0d00cff483d1413d46754c568f5\""
+        buildConfigField "String", "MARVEL_API_TS", "\"1\""
     }
 
     signingConfigs {
