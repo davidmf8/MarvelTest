@@ -17,6 +17,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "MARVEL_API_URL", "\"https://developer.marvel.com/v1/public/\""
+        buildConfigField "String", "MARVEL_API_KEY", "\"6be6a25397a1c9476f2006fcd6fc1cc9\""
     }
 
     signingConfigs {
@@ -83,6 +86,9 @@ dependencies {
     def koin_version = '2.2.3'
     def coroutines_version = '1.5.2'
     def livedata_version = '2.4.0'
+    def coroutines_adapter = '0.9.2'
+    def okhttp3_version = '4.8.0'
+    def retrofit2_version = '2.9.0'
 
     //Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -116,6 +122,19 @@ dependencies {
 
     // Material design
     implementation 'com.google.android.material:material:1.4.0'
+
+    //Gson
+    implementation "com.google.code.gson:gson:2.8.9"
+
+    //Okhttp3
+    implementation "com.squareup.okhttp3:okhttp:$okhttp3_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
+
+    //Retrofit2
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2_version"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$coroutines_adapter"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2_version"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofit2_version"
 
     //test
     testImplementation 'junit:junit:4.+'
