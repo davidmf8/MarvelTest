@@ -3,7 +3,7 @@ package com.marvel.test.retrofit.dto
 
 import com.google.gson.annotations.SerializedName
 
-data class MarvelCharactersDTO(
+data class CharactersDTO(
     @SerializedName("attributionHTML")
     val attributionHTML: String,
     @SerializedName("attributionText")

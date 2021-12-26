@@ -1,9 +1,6 @@
 package com.marvel.test.application
 
 import android.app.Application
-import android.util.Log
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.OnLifecycleEvent
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.marvel.test.BuildConfig
 import com.marvel.test.di.AppKoinInitialization
