@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'com.google.firebase.crashlytics'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -38,7 +39,7 @@ android {
         debug{
             minifyEnabled false
             buildConfigField 'boolean', 'ENABLE_CRASHLYTICS', 'false'
-            //signingConfig signingConfigs.debug
+            signingConfig signingConfigs.debug
         }
 
         release {
@@ -46,7 +47,7 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField 'boolean', 'ENABLE_CRASHLYTICS', 'true'
-            //signingConfig signingConfigs.release
+            signingConfig signingConfigs.release
         }
     }
 

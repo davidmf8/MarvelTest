@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "32541771925",
+    "project_id": "marveltest-cde03",
+    "storage_bucket": "marveltest-cde03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32541771925:android:18ffe00ea560448595739c",
+        "android_client_info": {
+          "package_name": "com.marvel.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32541771925-8piclddis5qj42h807d610a7o6422u3g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.marvel.test",
+            "certificate_hash": "32393b36ae01764f0894b358ff5160156ed90977"
+          }
+        },
+        {
+          "client_id": "32541771925-plal38ln66lpa53sn6ne7br9mt3a3jsa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.marvel.test",
+            "certificate_hash": "e48486a268cb9155e46bb105e977f70f11c76bf1"
+          }
+        },
+        {
+          "client_id": "32541771925-t14j23fkv51pjof6keunip0ahq6003cv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqIDFWBU784aSY3a4UwFBq-pu_ZGW7N6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32541771925-t14j23fkv51pjof6keunip0ahq6003cv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
