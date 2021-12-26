@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarvelTest">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.characters.CharactersActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

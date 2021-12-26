@@ -1,5 +1,6 @@
 package com.marvel.test.usecase.interactors.character
 
+import android.util.Log
 import com.marvel.test.base.AppResultHandler
 import com.marvel.test.bo.CharacterBO
 import com.marvel.test.repository.character.ICharacterRepository
@@ -11,6 +12,7 @@ class CharacterUseCase(private val characterRepository: ICharacterRepository) : 
     override suspend fun getCharacters(nextPage: Int): AppResultHandler<List<CharacterBO>> {
         return when (val characterResponse = characterRepository.getCharacters(nextPage)) {
             is ResultHandler.Success -> {
+                Log.d("response", characterResponse.toString())
                 AppResultHandler.Success(characterResponse.data.toCharacterListBO())
             }
             else -> {
