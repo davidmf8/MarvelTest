@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.marvel.test.base.AppResultHandler
 import com.marvel.test.bo.CharacterBO
+import com.marvel.test.bo.CharacterDetailBO
 import com.marvel.test.constants.RetrofitConstants.CHARACTERS_API_LIMIT
 import com.marvel.test.usecase.interactors.character.ICharacterUseCase
 import kotlinx.coroutines.Dispatchers
@@ -14,11 +15,11 @@ import kotlinx.coroutines.withContext
 
 class CharacterDetailPresenter(private val charactersUseCase: ICharacterUseCase) : ViewModel(),
     ICharacterDetailPresenter {
-    private val characterLiveData: MutableLiveData<CharacterBO> = MutableLiveData()
+    private val characterLiveData: MutableLiveData<CharacterDetailBO> = MutableLiveData()
     private val showErrorLiveData: MutableLiveData<Boolean> = MutableLiveData()
     private val showProgressLiveData: MutableLiveData<Boolean> = MutableLiveData()
 
-    override fun getCharacterLiveData(): MutableLiveData<CharacterBO> = characterLiveData
+    override fun getCharacterLiveData(): MutableLiveData<CharacterDetailBO> = characterLiveData
     override fun showLoadErrorLiveData(): MutableLiveData<Boolean> = showErrorLiveData
     override fun showProgressLiveData(): MutableLiveData<Boolean> = showProgressLiveData
 

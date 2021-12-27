@@ -2,4 +2,5 @@
 <resources>
     <string name="characters_screen_view">Pantalla listado de personajes de Marvel</string>
     <string name="character_detail_screen_view">Pantalla de detalle de personaje</string>
+    <string name="character_detail_error_screen_view">Pantalla de error de detalle de un personaje</string>
 </resources>

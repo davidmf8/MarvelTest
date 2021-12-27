@@ -138,6 +138,9 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit2_version"
     implementation "com.squareup.retrofit2:converter-scalars:$retrofit2_version"
 
+    // Webview
+    implementation 'androidx.browser:browser:1.4.0'
+
     //test
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

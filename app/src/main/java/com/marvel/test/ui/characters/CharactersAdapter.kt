@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.marvel.test.bo.CharacterBO
 import com.marvel.test.databinding.RowCharacterBinding
+import com.marvel.test.extension.loadRemoteImage
 
 class CharactersAdapter(private val listener: CharactersListener) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -55,12 +56,7 @@ class CharactersAdapter(private val listener: CharactersListener) :
 
         fun bind(characterBO: CharacterBO) {
             itemBinding.tvCharacterName.text = characterBO.name
-
-            Glide
-                .with(itemBinding.ivCharacterImage.context)
-                .load(characterBO.imageUrl)
-                .into(itemBinding.ivCharacterImage)
-
+            binding.ivCharacterImage.loadRemoteImage(characterBO.imageUrl)
             itemView.setOnClickListener {
                 listener.onClickCharacter(
                     characterBO

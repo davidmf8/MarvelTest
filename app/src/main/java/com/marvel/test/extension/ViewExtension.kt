@@ -6,8 +6,10 @@ import android.content.Context
 import android.text.TextUtils
 import android.view.animation.AnimationUtils
 import android.view.animation.LayoutAnimationController
+import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.marvel.test.R
 
 fun Activity.configRecyclerViewAsGrid(recyclerView: RecyclerView, numColumns: Int) {
@@ -38,4 +40,11 @@ fun Activity.showErrorDialog(
     builder.setMessage(message)
     builder.setPositiveButton(R.string.accept_alert_button, null)
     builder.create().show()
+}
+
+fun ImageView.loadRemoteImage(imageUrl: String){
+    Glide
+        .with(this.context)
+        .load(imageUrl)
+        .into(this)
 }

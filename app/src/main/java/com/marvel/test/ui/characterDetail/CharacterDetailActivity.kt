@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import com.marvel.test.R
 import com.marvel.test.base.BaseActivity
-import com.marvel.test.bo.CharacterBO
 import com.marvel.test.databinding.ActivityCharacterDetailBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -46,21 +45,20 @@ class CharacterDetailActivity: BaseActivity() {
         presenter.showLoadErrorLiveData().observe(
             this,
             {
-                if (it) binding.tvEmptyCharacters.visibility = View.VISIBLE
-                else binding.tvEmptyCharacters.visibility = View.GONE
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container_view, CharacterDetailErrorFragment.newInstance())
+                    .commit()
             }
         )
 
         presenter.getCharacterLiveData().observe(
             this,
             {
-                drawCharacter(it)
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container_view, CharacterDetailFragment.newInstance(it))
+                    .commit()
             }
         )
-    }
-
-    private fun drawCharacter(characterBO: CharacterBO) {
-
     }
 
     override fun removeObservers() {
