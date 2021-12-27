@@ -5,5 +5,6 @@ object RetrofitConstants {
     const val API_KEY_QUERY_PARAMETER: String = "apikey"
     const val TS_QUERY_PARAMETER: String = "ts"
     const val HASH_QUERY_PARAMETER: String = "hash"
+    const val CHARACTERS_API_LIMIT: Int = 20
 
 }

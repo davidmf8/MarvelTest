@@ -1,3 +1,4 @@
 <resources>
 
+    <string name="characters_empty_data">No se ha encontrado personajes de Marvel actualmente</string>
 </resources>

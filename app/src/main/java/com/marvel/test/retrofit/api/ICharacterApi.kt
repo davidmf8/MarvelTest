@@ -10,7 +10,7 @@ import retrofit2.http.Query
 interface ICharacterApi {
 
     @GET("characters")
-    suspend fun getCharacters(@Query("offset") offset: Int): Response<MarvelGenericDTO<CharacterDTO>>
+    suspend fun getCharacters(@Query("offset") offset: Int, @Query("limit") limit: Int): Response<MarvelGenericDTO<CharacterDTO>>
 
     @GET("characters/{characterId}")
     suspend fun getCharacterDetail(@Path("characterId") characterId: Int): Response<MarvelGenericDTO<CharacterDTO>>

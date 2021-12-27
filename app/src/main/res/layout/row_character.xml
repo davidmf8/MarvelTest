@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dimen_16dp"
+    android:layout_marginTop="@dimen/dimen_16dp"
+    android:layout_marginEnd="@dimen/dimen_2dp"
+    android:layout_marginBottom="@dimen/dimen_2dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dimen_16dp">
+
+        <ImageView
+            android:id="@+id/iv_character_image"
+            android:layout_width="@dimen/dimen_140dp"
+            android:layout_height="@dimen/dimen_200dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/default_image" />
+
+        <TextView
+            android:id="@+id/tv_character_name"
+            style="@style/TextViewBlack16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            tools:text="Capitán América" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

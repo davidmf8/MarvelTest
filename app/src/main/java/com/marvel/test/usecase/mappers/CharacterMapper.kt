@@ -15,7 +15,6 @@ fun CharacterDTO.toCharacterBO(): CharacterBO {
     return CharacterBO(
         this.name,
         this.description,
-        this.thumbnail?.path,
-        this.thumbnail?.extension
+        this.thumbnail?.path + "/portrait_xlarge." + this.thumbnail?.extension,
     )
 }
