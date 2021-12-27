@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="characters_screen_view">Pantalla listado de personajes de Marvel</string>
+    <string name="character_detail_screen_view">Pantalla de detalle de personaje</string>
 </resources>

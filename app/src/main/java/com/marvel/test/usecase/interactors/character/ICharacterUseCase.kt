@@ -5,4 +5,5 @@ import com.marvel.test.bo.CharacterBO
 
 interface ICharacterUseCase {
     suspend fun getCharacters(nextPage: Int): AppResultHandler<List<CharacterBO>>
+    suspend fun getCharacterDetail(id: Int): AppResultHandler<CharacterBO>
 }

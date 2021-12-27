@@ -8,9 +8,11 @@ import com.marvel.test.bo.CharacterBO
 import com.marvel.test.databinding.ActivityCharactersBinding
 import com.marvel.test.extension.configRecyclerViewAsGrid
 import com.marvel.test.extension.recyclerViewSlideFromRightAnimation
+import com.marvel.test.extension.showErrorDialog
+import com.marvel.test.ui.characterDetail.CharacterDetailActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class CharactersActivity: BaseActivity(), CharactersAdapter.CharactersListener {
+class CharactersActivity : BaseActivity(), CharactersAdapter.CharactersListener {
     private val adapter: CharactersAdapter = CharactersAdapter(this)
     private lateinit var binding: ActivityCharactersBinding
     private val presenter: ICharactersPresenter by viewModel<CharactersPresenter>()
@@ -51,7 +53,7 @@ class CharactersActivity: BaseActivity(), CharactersAdapter.CharactersListener {
         )
     }
 
-    private fun configView(){
+    private fun configView() {
         adapter.setCharacterList(ArrayList())
         binding.rvCharacters.adapter = adapter
         configRecyclerViewAsGrid(binding.rvCharacters, 2)
@@ -63,7 +65,12 @@ class CharactersActivity: BaseActivity(), CharactersAdapter.CharactersListener {
     }
 
     override fun onClickCharacter(character: CharacterBO) {
-
+        character.id?.let {
+            startActivity(CharacterDetailActivity.buildIntent(this, it))
+        } ?: showErrorDialog(
+            getString(R.string.character_not_exists_id),
+            false
+        )
     }
 
     override fun loadNextPage() {

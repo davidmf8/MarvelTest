@@ -10,8 +10,22 @@ class CharacterRepository(private val api: CharacterApi): ICharacterRepository {
         return api.getCharacters(offset).sendResponse()
     }
 
-    override suspend fun getCharacterDetail(id: Int): ResultHandler<List<CharacterDTO>> {
-        return api.getCharacterDetail(id).sendResponse()
+    override suspend fun getCharacterDetail(id: Int): ResultHandler<CharacterDTO> {
+        return when(val response = api.getCharacterDetail(id).sendResponse()){
+            is ResultHandler.Success -> {
+                ResultHandler.Success(response.data[0])
+            }
+
+            is ResultHandler.MarvelError -> {
+                return response
+            }
+            is ResultHandler.HttpError -> {
+                return response
+            }
+            else ->{
+                return ResultHandler.GenericError()
+            }
+        }
     }
 
     private fun <K: Any, T: MarvelGenericDTO<K>> ResultHandler<T>.sendResponse(): ResultHandler<ArrayList<K>> {
@@ -22,6 +36,12 @@ class CharacterRepository(private val api: CharacterApi): ICharacterRepository {
                 }.run{
                     return ResultHandler.GenericError()
                 }
+            }
+            is ResultHandler.MarvelError -> {
+                return this
+            }
+            is ResultHandler.HttpError -> {
+                return this
             }
             else ->{
                 return ResultHandler.GenericError()

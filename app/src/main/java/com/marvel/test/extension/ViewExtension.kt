@@ -1,7 +1,9 @@
 package com.marvel.test.extension
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Context
+import android.text.TextUtils
 import android.view.animation.AnimationUtils
 import android.view.animation.LayoutAnimationController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -25,4 +27,15 @@ fun RecyclerView.recyclerViewSlideFromRightAnimation(context: Context) {
         context,
         R.anim.recycler_animation_slide_from_right
     )
+}
+
+fun Activity.showErrorDialog(
+    message: String,
+    cancelable: Boolean
+) {
+    val builder = AlertDialog.Builder(this)
+    builder.setCancelable(cancelable)
+    builder.setMessage(message)
+    builder.setPositiveButton(R.string.accept_alert_button, null)
+    builder.create().show()
 }

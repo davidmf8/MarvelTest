@@ -13,6 +13,7 @@ fun List<CharacterDTO>.toCharacterListBO(): List<CharacterBO> {
 
 fun CharacterDTO.toCharacterBO(): CharacterBO {
     return CharacterBO(
+        this.id,
         this.name,
         this.description,
         this.thumbnail?.path + "/portrait_xlarge." + this.thumbnail?.extension,
