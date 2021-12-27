@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName
 
 data class ComicDTO(
     @SerializedName("available")
-    val available: Int,
+    val available: Int?,
     @SerializedName("collectionURI")
-    val collectionURI: String,
+    val collectionURI: String?,
     @SerializedName("items")
-    val itemDTOS: List<ItemDTO>,
+    val itemDTOS: List<ItemDTO>?,
     @SerializedName("returned")
-    val returned: Int
+    val returned: Int?
 )

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class ItemDTO(
     @SerializedName("name")
-    val name: String,
+    val name: String?,
     @SerializedName("resourceURI")
-    val resourceURI: String
+    val resourceURI: String?
 )

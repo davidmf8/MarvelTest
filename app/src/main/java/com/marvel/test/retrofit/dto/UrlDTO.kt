@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class UrlDTO(
     @SerializedName("type")
-    val type: String,
+    val type: String?,
     @SerializedName("url")
-    val url: String
+    val url: String?
 )

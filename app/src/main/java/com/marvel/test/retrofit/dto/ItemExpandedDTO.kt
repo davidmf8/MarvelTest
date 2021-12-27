@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName
 
 data class ItemExpandedDTO(
     @SerializedName("name")
-    val name: String,
+    val name: String?,
     @SerializedName("resourceURI")
-    val resourceURI: String,
+    val resourceURI: String?,
     @SerializedName("type")
-    val type: String
+    val type: String?
 )

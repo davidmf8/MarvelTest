@@ -5,17 +5,17 @@ import com.google.gson.annotations.SerializedName
 
 data class CharactersDTO(
     @SerializedName("attributionHTML")
-    val attributionHTML: String,
+    val attributionHTML: String?,
     @SerializedName("attributionText")
-    val attributionText: String,
+    val attributionText: String?,
     @SerializedName("code")
-    val code: Int,
+    val code: Int?,
     @SerializedName("copyright")
-    val copyright: String,
+    val copyright: String?,
     @SerializedName("data")
-    val data: DataDTO,
+    val data: DataDTO?,
     @SerializedName("etag")
-    val etag: String,
+    val etag: String?,
     @SerializedName("status")
-    val status: String
+    val status: String?
 )

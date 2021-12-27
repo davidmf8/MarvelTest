@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName
 
 data class StoriesDTO(
     @SerializedName("available")
-    val available: Int,
+    val available: Int?,
     @SerializedName("collectionURI")
-    val collectionURI: String,
+    val collectionURI: String?,
     @SerializedName("items")
-    val items: List<ItemExpandedDTO>,
+    val items: List<ItemExpandedDTO>?,
     @SerializedName("returned")
-    val returned: Int
+    val returned: Int?
 )

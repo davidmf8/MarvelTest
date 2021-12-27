@@ -5,25 +5,25 @@ import com.google.gson.annotations.SerializedName
 
 data class ResultDTO(
     @SerializedName("comics")
-    val comics: ComicDTO,
+    val comics: ComicDTO?,
     @SerializedName("description")
-    val description: String,
+    val description: String?,
     @SerializedName("events")
-    val eventsDTO: EventsDTO,
+    val eventsDTO: EventsDTO?,
     @SerializedName("id")
-    val id: Int,
+    val id: Int?,
     @SerializedName("modified")
-    val modified: String,
+    val modified: String?,
     @SerializedName("name")
-    val name: String,
+    val name: String?,
     @SerializedName("resourceURI")
-    val resourceURI: String,
+    val resourceURI: String?,
     @SerializedName("series")
-    val seriesDTO: SeriesDTO,
+    val seriesDTO: SeriesDTO?,
     @SerializedName("stories")
-    val storiesDTO: StoriesDTO,
+    val storiesDTO: StoriesDTO?,
     @SerializedName("thumbnail")
-    val thumbnail: ThumbnailDTO,
+    val thumbnail: ThumbnailDTO?,
     @SerializedName("urls")
-    val urlDTOS: List<UrlDTO>
+    val urlDTOS: List<UrlDTO>?
 )
