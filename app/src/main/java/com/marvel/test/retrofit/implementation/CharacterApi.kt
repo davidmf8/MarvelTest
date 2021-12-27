@@ -6,7 +6,11 @@ import com.marvel.test.retrofit.commons.ResultHandler
 import com.marvel.test.retrofit.dto.CharactersDTO
 
 class CharacterApi(private val api: ICharacterApi) : BaseApi() {
-    suspend fun getMarvelCharacters(offset: Int): ResultHandler<CharactersDTO> {
+    suspend fun getCharacters(offset: Int): ResultHandler<CharactersDTO> {
         return request(call = { api.getCharacters(offset) })
+    }
+
+    suspend fun getCharacterDetail(id: Int): ResultHandler<CharactersDTO> {
+        return request(call = { api.getCharacterDetail(id) })
     }
 }

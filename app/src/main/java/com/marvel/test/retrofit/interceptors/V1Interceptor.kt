@@ -1,6 +1,9 @@
 package com.marvel.test.retrofit.interceptors
 
 import com.marvel.test.BuildConfig
+import com.marvel.test.constants.RetrofitConstants.API_KEY_QUERY_PARAMETER
+import com.marvel.test.constants.RetrofitConstants.HASH_QUERY_PARAMETER
+import com.marvel.test.constants.RetrofitConstants.TS_QUERY_PARAMETER
 import com.marvel.test.extension.toMD5
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
@@ -13,13 +16,13 @@ fun getV1Interceptor(): Interceptor {
         val newUrl: HttpUrl = chain.request().url
             .newBuilder()
             .port(443)
-            .addQueryParameter("ts", BuildConfig.MARVEL_API_TS)
+            .addQueryParameter(TS_QUERY_PARAMETER, BuildConfig.MARVEL_API_TS)
             .addQueryParameter(
-                "apikey",
+                API_KEY_QUERY_PARAMETER,
                 BuildConfig.MARVEL_PUBLIC_API_KEY
             )
             .addQueryParameter(
-                "hash",
+                HASH_QUERY_PARAMETER,
                 (BuildConfig.MARVEL_API_TS + BuildConfig.MARVEL_PRIVATE_API_KEY + BuildConfig.MARVEL_PUBLIC_API_KEY).toMD5()
             )
             .build()
