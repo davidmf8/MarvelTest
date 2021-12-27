@@ -9,8 +9,10 @@ import com.marvel.test.R
 import com.marvel.test.base.BaseFragment
 import com.marvel.test.bo.CharacterDetailBO
 import com.marvel.test.databinding.FragmentCharacterDetailBinding
+import com.marvel.test.extension.configRecyclerViewAsGrid
 import com.marvel.test.extension.loadRemoteImage
 import com.marvel.test.extension.openInternalUrl
+import com.marvel.test.extension.recyclerViewSlideFromRightAnimation
 
 class CharacterDetailFragment: BaseFragment() {
     companion object {
@@ -58,6 +60,10 @@ class CharacterDetailFragment: BaseFragment() {
         } else {
             binding.cvCharacterDetailUrl.visibility = View.GONE
         }
+
+        binding.rvComics.adapter = ComicAdapter(characterDetailBO.comicsList)
+        configRecyclerViewAsGrid(binding.rvComics, 3)
+        binding.rvComics.recyclerViewSlideFromRightAnimation(requireContext())
     }
 
     override fun getViewName(): String = getString(R.string.character_detail_screen_view)

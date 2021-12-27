@@ -7,6 +7,7 @@ import android.text.TextUtils
 import android.view.animation.AnimationUtils
 import android.view.animation.LayoutAnimationController
 import android.widget.ImageView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -15,10 +16,20 @@ import com.marvel.test.R
 fun Activity.configRecyclerViewAsGrid(recyclerView: RecyclerView, numColumns: Int) {
     val layoutManager = GridLayoutManager(this, numColumns)
     recyclerView.layoutManager = layoutManager
-    // Animation
     val animation: LayoutAnimationController =
         AnimationUtils.loadLayoutAnimation(
             applicationContext,
+            R.anim.recycler_animation_fall_down
+        )
+    recyclerView.layoutAnimation = animation
+}
+
+fun Fragment.configRecyclerViewAsGrid(recyclerView: RecyclerView, numColumns: Int) {
+    val layoutManager = GridLayoutManager(context, numColumns)
+    recyclerView.layoutManager = layoutManager
+    val animation: LayoutAnimationController =
+        AnimationUtils.loadLayoutAnimation(
+            context,
             R.anim.recycler_animation_fall_down
         )
     recyclerView.layoutAnimation = animation
