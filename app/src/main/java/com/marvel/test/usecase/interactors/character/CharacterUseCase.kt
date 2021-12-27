@@ -12,6 +12,7 @@ class CharacterUseCase(private val characterRepository: ICharacterRepository) : 
     override suspend fun getCharacters(nextPage: Int): AppResultHandler<List<CharacterBO>> {
         return when (val characterResponse = characterRepository.getCharacters(nextPage)) {
             is ResultHandler.Success -> {
+                Log.d("response", characterResponse.toString())
                 AppResultHandler.Success(characterResponse.data.toCharacterListBO())
             }
             else -> {

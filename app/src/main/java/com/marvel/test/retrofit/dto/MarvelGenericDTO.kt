@@ -1,9 +1,8 @@
 package com.marvel.test.retrofit.dto
 
-
 import com.google.gson.annotations.SerializedName
 
-data class CharactersDTO(
+data class MarvelGenericDTO<T>(
     @SerializedName("attributionHTML")
     val attributionHTML: String?,
     @SerializedName("attributionText")
@@ -13,9 +12,15 @@ data class CharactersDTO(
     @SerializedName("copyright")
     val copyright: String?,
     @SerializedName("data")
-    val data: DataDTO?,
+    val data: MarvelGenericDataDTO<T>?,
     @SerializedName("etag")
     val etag: String?,
     @SerializedName("status")
     val status: String?
-)
+){
+    fun getCustomData(): List<T>? {
+        return if (data?.resultDTOS != null && data.resultDTOS.isNotEmpty()) {
+            data.resultDTOS
+        } else null
+    }
+}

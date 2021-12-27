@@ -1,18 +1,17 @@
 package com.marvel.test.usecase.mappers
 
 import com.marvel.test.bo.CharacterBO
-import com.marvel.test.retrofit.dto.CharactersDTO
-import com.marvel.test.retrofit.dto.ResultDTO
+import com.marvel.test.retrofit.dto.CharacterDTO
 
-fun CharactersDTO.toCharacterListBO(): List<CharacterBO> {
+fun List<CharacterDTO>.toCharacterListBO(): List<CharacterBO> {
     val list: ArrayList<CharacterBO> = ArrayList()
-    this.data?.resultDTOS?.forEach {
+    this.forEach {
         list.add(it.toCharacterBO())
     }
     return list
 }
 
-fun ResultDTO.toCharacterBO(): CharacterBO {
+fun CharacterDTO.toCharacterBO(): CharacterBO {
     return CharacterBO(
         this.name,
         this.description,
