@@ -21,6 +21,7 @@ class CharactersActivity : BaseActivity(), CharactersAdapter.CharactersListener 
         super.onCreate(savedInstanceState)
         binding = ActivityCharactersBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setTitle(R.string.characters_title_toolbar)
         loadObservers()
         configView()
         presenter.loadCharactersData()

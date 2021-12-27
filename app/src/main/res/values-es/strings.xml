@@ -4,4 +4,6 @@
     <string name="accept_alert_button">Aceptar</string>
     <string name="character_not_exists_id">No existe detalle de este personaje</string>
     <string name="character_detail_empty_data">No se ha encontrado el detalle de este personaje</string>
+    <string name="characters_title_toolbar">Listado de personajes</string>
+    <string name="character_detail_title_toolbar">Detalle de personaje</string>
 </resources>

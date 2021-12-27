@@ -28,6 +28,7 @@ class CharacterDetailActivity: BaseActivity() {
         binding = ActivityCharacterDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         loadObservers()
+        setTitle(R.string.character_detail_title_toolbar)
         presenter.loadCharacterData(intent.getIntExtra(ARG_CHARACTER_ID, 0))
 
     }
