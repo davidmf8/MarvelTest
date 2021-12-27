@@ -1,5 +1,7 @@
 package com.marvel.test.retrofit.commons
 
+import com.google.gson.GsonBuilder
+import com.marvel.test.retrofit.dto.MarvelErrorDTO
 import retrofit2.HttpException
 import retrofit2.Response
 import java.io.IOException
@@ -20,7 +22,10 @@ open class BaseApi {
                 } else
                     ResultHandler.Success(response.body()!!)
             else {
-                ResultHandler.HttpError(response.code(), response.message())
+                val marvelError = GsonBuilder().create().fromJson(
+                    response.errorBody()?.string(), MarvelErrorDTO::class.java
+                )
+                ResultHandler.MarvelError(marvelError)
             }
         } catch (throwable: Throwable) {
             when (throwable) {

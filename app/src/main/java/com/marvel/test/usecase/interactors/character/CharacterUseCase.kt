@@ -15,6 +15,7 @@ class CharacterUseCase(private val characterRepository: ICharacterRepository) : 
                 Log.d("response", characterResponse.toString())
                 AppResultHandler.Success(characterResponse.data.toCharacterListBO())
             }
+            is ResultHandler.MarvelError -> AppResultHandler.GenericError(characterResponse.marvelErrorDTO.code, characterResponse.marvelErrorDTO.status)
             else -> {
                 AppResultHandler.GenericError()
             }
