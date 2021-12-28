@@ -43,12 +43,24 @@ Se ha añadido proguard para las compilaciones en modo Release para la oguscaci�
 
 Indicar que los modelos llevan la etiqueta @SerializedName dado que he utilizado un plugin que autogenera los modelos. Si los nombres de las data classes DTO tienen el mismo que el json, se puede omitir este etiquetado. Solo tiene la ventaja cuando quieres ponerles diferentes nombres.
 
+Se ha puesto todo como opcional "?" dado que en la API se establece que prácticamente todo puede ser opcional.
+
 ## Firebase
 
 Se ha añadido Firebase a través de Firebase BoM, para un correcto versionado de las librerías. Se ha añadido Crashlytics y Analíticas.
 
 Tiene un fichero google.json diferente para cada entorno ya que son dos proyectos diferentes en Firebase: uno para PRE para su propio empaquetado y otro para PRO.
 
-## Comunicación con Corrutinas
+## Comunicación con Corrutinas y gestión de errores
 
-Pa
+Para la comunicación de Corrutinas y gestión errores se han usado dos clases: ResultHandler<T> y AppResultHandler<T>. Dado que las corrutinas solo devuelven un tipo de datos, se ha creado esas dos clases para poder devolver diferentes tipos. ResultHandler se utiliza para la gestión de success y error entre la capa de Model e Interactor. Para el resto se usa AppResultHandler que tiene menos casos.
+  
+Se ha realizado una gestión genérica del tratamiento de errores al a hora de recibir una respuesta de servidor (mirar BaseApi). 
+
+## Carga de imágenes
+  
+Se ha utilizado Glide para la carga de imágenes. Se ha tenido que añadir al Manifest android:usesCleartextTraffic="true" dado que las urls de imñagenes dee Marvel son por http y no por https, por lo que se ha tenido que añadir si no no cargan imágenes.
+  
+## Paginación
+  
+Dado que el primer servicio es paginado, se ha implementado un recyclerview con paginación, cargando datos de 20 en 20 al llegar al final del scroll.
