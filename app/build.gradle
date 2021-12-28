@@ -16,8 +16,6 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
         buildConfigField "String", "MARVEL_API_URL", "\"https://gateway.marvel.com/v1/public/\""
         buildConfigField "String", "MARVEL_PUBLIC_API_KEY", "\"6be6a25397a1c9476f2006fcd6fc1cc9\""
         buildConfigField "String", "MARVEL_PRIVATE_API_KEY", "\"cc5e74af2d4dd0d00cff483d1413d46754c568f5\""
@@ -140,9 +138,4 @@ dependencies {
 
     // Webview
     implementation 'androidx.browser:browser:1.4.0'
-
-    //test
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
