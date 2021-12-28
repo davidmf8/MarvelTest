@@ -1,10 +1,9 @@
 <resources>
-
-    <string name="characters_empty_data">No se ha encontrado personajes de Marvel actualmente</string>
-    <string name="accept_alert_button">Aceptar</string>
-    <string name="character_not_exists_id">No existe detalle de este personaje</string>
-    <string name="character_detail_empty_data">No se ha encontrado el detalle de este personaje</string>
-    <string name="character_detail_web_link_title">Ir a detalle web</string>
-    <string name="characters_title_toolbar">Listado de personajes</string>
-    <string name="character_detail_title_toolbar">Detalle de personaje</string>
+    <string name="characters_empty_data">Currently no Marvel characters found</string>
+    <string name="accept_alert_button">Accept</string>
+    <string name="character_not_exists_id">There is no detail of this character</string>
+    <string name="character_detail_empty_data">The detail of this character has not been found</string>
+    <string name="character_detail_web_link_title">Go to web detail</string>
+    <string name="characters_title_toolbar">List of characters</string>
+    <string name="character_detail_title_toolbar">Character detail</string>
 </resources>
