@@ -61,6 +61,20 @@ Se ha realizado una gestión genérica del tratamiento de errores al a hora de r
   
 Se ha utilizado Glide para la carga de imágenes. Se ha tenido que añadir al Manifest android:usesCleartextTraffic="true" dado que las urls de imñagenes dee Marvel son por http y no por https, por lo que se ha tenido que añadir si no no cargan imágenes.
   
+Para mayor facilidad, dado que la prueba ha sido larga, se ha utilizado xlarge para las imñagenes de la API de Marvel como parámetro de la url.
+  
 ## Paginación
   
 Dado que el primer servicio es paginado, se ha implementado un recyclerview con paginación, cargando datos de 20 en 20 al llegar al final del scroll.
+  
+## Recursos
+  
+Se ha implementado traducciones (inglés - español). Por defecto, será en inglés.
+  
+Se ha implementado estilos, animaciones, dimens y colores.
+  
+## Accesibilidad
+  
+Se ha etiquetado todos los ImageView con contentDescription="@null" para que el Talkback de Android no lo reconozca directamente. Si se quisiera que dijese algo al pasar el dedo y lo reconozca, solo habría que establecer un texto.
+  
+
